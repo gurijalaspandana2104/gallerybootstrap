@@ -6,6 +6,8 @@
     <title>E-Commerce</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="E.css" rel="stylesheet">
+    <script src="js/weather.js"></script>
+
 
     <style>
         .product-card {
@@ -14,6 +16,26 @@
         .product-card:hover {
             transform: scale(1.05);
         }
+        .weather-card {
+            max-width: 250px;
+            padding: 15px;
+            background-color: #e0f7fa;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .weather-card img {
+            width: 70px;
+            height: 70px;
+        }
+        #weather-component {
+            max-width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        
+        
     </style>
 </head>
 <body>
@@ -37,6 +59,19 @@
         <h1>Welcome to E-Shop</h1>
         <p>Your one-stop destination for amazing products</p>
     </header>
+   <!-- Weather Component -->
+   <div id="weather-component" class="text-center p-3 bg-light">
+    <h3>Check Weather</h3>
+    <input type="text" id="city-input" placeholder="Enter city name" class="form-control mb-2" />
+    <button onclick="getWeather()" class="btn btn-primary mb-3">Get Weather</button>
+    <div id="weather-info" style="display:none;">
+        <h4 id="location"></h4>
+        <img id="icon" src="" alt="Weather Icon" />
+        <h5 id="temp"></h5>
+        <p id="condition"></p>
+    </div>
+</div>
+
 
     <section id="products" class="container py-5">
         <div class="row">
